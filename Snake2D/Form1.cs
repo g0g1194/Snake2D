@@ -13,7 +13,6 @@ namespace Snake2D
 
         PictureBox apple = new PictureBox();
         PictureBox[] snake;
-        //PictureBox[,] grass;
         int dirX = 1, dirY = 0;
         int score = 0;
         bool gameIsOpen = true;
@@ -32,7 +31,6 @@ namespace Snake2D
             timerGameDelay.Interval = Settings.Default.GameDelay;
 
             snake = new PictureBox[fieldX / sizeDot * (fieldY / sizeDot)];
-            //grass = new PictureBox[fieldY / sizeDot, fieldX / sizeDot] ;
 
             GenMap();
 
@@ -42,7 +40,6 @@ namespace Snake2D
             apple.Size = new Size(sizeDot, sizeDot);
             //apple.SizeMode = PictureBoxSizeMode.StretchImage;
             apple.Image = Resources.apple;
-            //Controls.Remove
             Controls.Add(apple);
 
             snake[0] = new PictureBox();
@@ -55,32 +52,40 @@ namespace Snake2D
 
         private void GenMap()
         {
-            /*
-            for (int iy = 0; iy < fieldX / sizeDot; iy++)
+            for(int i = 0; i <= fieldX; i += sizeDot)
             {
-                for (int ix = 0; ix < fieldY / sizeDot; ix++)
-                {
-                    int grassID = ix * iy;
-                    grass[grassID] = new PictureBox();
-                    grass[grassID].Location = new Point(ix * sizeDot, iy * sizeDot);
-                    grass[grassID].Size = new Size(sizeDot, sizeDot);
-                    grass[grassID].Image = Resources.grass;
-                    //grass[grassID].SizeMode = PictureBoxSizeMode.StretchImage;
-                    Controls.Add(grass[grassID]);
-                }
+                PictureBox boxY = new PictureBox();
+                boxY.BackColor = Color.Black;
+                boxY.Location = new Point(i, 0);
+                boxY.Size = new Size(1, fieldY);
+                Controls.Add(boxY);
             }
-            */
+
+            for (int i = 0; i <= fieldY; i += sizeDot)
+            {
+                PictureBox boxX = new PictureBox();
+                boxX.BackColor = Color.Black;
+                boxX.Location = new Point(0, i);
+                boxX.Size = new Size(fieldX, 1);
+                Controls.Add(boxX);
+            }
+
+            PictureBox corner = new PictureBox();
+            corner.BackColor = Color.Black;
+            corner.Location = new Point(fieldX, fieldY);
+            corner.Size = new Size(1, 1);
+            Controls.Add(corner);
 
             PictureBox borderX = new PictureBox();
-            borderX.BackColor = Color.Black;
-            borderX.Location = new Point(0, fieldY);
-            borderX.Size = new Size(fieldX, 1);
+            borderX.BackColor = Color.White;
+            borderX.Location = new Point(0, fieldY + 1);
+            borderX.Size = new Size(fieldX, sizeDot);
             Controls.Add(borderX);
 
             PictureBox borderY = new PictureBox();
-            borderY.BackColor = Color.Black;
-            borderY.Location = new Point(fieldX, 0);
-            borderY.Size = new Size(1, fieldY + 1);
+            borderY.BackColor = Color.White;
+            borderY.Location = new Point(fieldX + 1, 0);
+            borderY.Size = new Size(sizeDot, fieldY);
             Controls.Add(borderY);
         }
 
