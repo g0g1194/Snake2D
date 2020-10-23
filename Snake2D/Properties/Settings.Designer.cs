@@ -37,7 +37,7 @@ namespace Snake2D.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("640")]
+        [global::System.Configuration.DefaultSettingValueAttribute("16")]
         public int sizeX {
             get {
                 return ((int)(this["sizeX"]));
@@ -49,7 +49,7 @@ namespace Snake2D.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("480")]
+        [global::System.Configuration.DefaultSettingValueAttribute("12")]
         public int sizeY {
             get {
                 return ((int)(this["sizeY"]));

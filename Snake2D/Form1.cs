@@ -21,11 +21,6 @@ namespace Snake2D
         {
             InitializeComponent();
 
-            if (Settings.Default.GameDelay == 0 || Settings.Default.sizeX == 0 || Settings.Default.sizeY == 0)
-            {
-                SettingsManager.Saver(200, 16, 12);
-            }
-
             Size = new Size(fieldX + sizeDot / 2, fieldY + 2 * sizeDot);
 
             fieldX = Settings.Default.sizeX * sizeDot;
