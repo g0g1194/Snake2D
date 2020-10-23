@@ -119,16 +119,18 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 68</value>
+    <value>232, 102</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Движение - WASD или Стрелочки
 Пауза - Пробел или P
 Настройки - E
-Справка - H</value>
+Справка - H
+
+Сделано g0g1194</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>258, 97</value>
+    <value>325, 132</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
