@@ -26,6 +26,8 @@ namespace Snake2D
                 SettingsManager.Saver(200, 16, 12);
             }
 
+            Size = new Size(fieldX + sizeDot / 2, fieldY + 2 * sizeDot);
+
             fieldX = Settings.Default.sizeX * sizeDot;
             fieldY = Settings.Default.sizeY * sizeDot;
             timerGameDelay.Interval = Settings.Default.GameDelay;
@@ -202,16 +204,26 @@ namespace Snake2D
                     break;
                 case "Space":
                 case "P":
-                    if (gameIsOpen)
-                        timerGameDelay.Stop();
-                    else
-                        timerGameDelay.Start();
-                    gameIsOpen = !gameIsOpen;
+                    GamePause();
                     break;
                 case "E":
                     new FormSettings().Show();
+                    GamePause();
+                    break;
+                case "H":
+                    new FormHelp().Show();
+                    GamePause();
                     break;
             }
+        }
+
+        private void GamePause()
+        {
+            if (gameIsOpen)
+                timerGameDelay.Stop();
+            else
+                timerGameDelay.Start();
+            gameIsOpen = !gameIsOpen;
         }
     }
 }
