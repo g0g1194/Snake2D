@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Snake2D
 {
@@ -7,10 +8,16 @@ namespace Snake2D
         public FormSettings()
         {
             InitializeComponent();
-
-            trackBarGameDelay.Value = Properties.Settings.Default.GameDelay;
-            numericUpDownSizeX.Value = Properties.Settings.Default.sizeX;
-            numericUpDownSizeY.Value = Properties.Settings.Default.sizeY;
+            try
+            {
+                trackBarGameDelay.Value = Properties.Settings.Default.GameDelay;
+                numericUpDownSizeX.Value = Properties.Settings.Default.sizeX;
+                numericUpDownSizeY.Value = Properties.Settings.Default.sizeY;
+            }catch(Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            
         }
 
         private void buttonSaveSettings_Click(object sender, System.EventArgs e)
